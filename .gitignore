@@ -1,0 +1,10 @@
+# Data & models (too large for GitHub)
+data/
+models/*.pt
+models/*.pth
+videos/*.mp4
+videos/*.avi
+outputs/keyframes/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
