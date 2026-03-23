@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Scene Report — synthetic_test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f5f7fa; color: #2c3e50; padding: 24px; }
+        .container { max-width: 960px; margin: 0 auto; }
+        h1 { font-size: 1.8em; margin-bottom: 8px; color: #2c3e50; }
+        .subtitle { color: #7f8c8d; margin-bottom: 24px; font-size: 0.95em; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+        .stat-card { background: white; border-radius: 10px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .stat-value { font-size: 1.6em; font-weight: 700; color: #3498db; }
+        .stat-label { font-size: 0.8em; color: #95a5a6; margin-top: 4px; }
+        .timeline-container { background: white; border-radius: 10px; padding: 16px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .timeline-title { font-weight: 600; margin-bottom: 10px; }
+        .timeline { display: flex; height: 40px; border-radius: 6px; overflow: hidden; }
+        .timeline-segment { display: flex; align-items: center; justify-content: center; min-width: 30px; transition: opacity 0.2s; cursor: pointer; }
+        .timeline-segment:hover { opacity: 0.8; }
+        .segment-label { color: white; font-size: 0.75em; font-weight: 700; }
+        .scene-card { background: white; border-radius: 10px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .scene-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #f8f9fa; border-bottom: 1px solid #eee; }
+        .shot-badge { background: #3498db; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600; }
+        .time-badge { color: #7f8c8d; font-size: 0.85em; }
+        .scene-body { display: flex; padding: 16px; gap: 16px; }
+        .keyframe-container { flex-shrink: 0; }
+        .keyframe-img { width: 260px; height: 180px; object-fit: cover; border-radius: 8px; }
+        .scene-info { flex: 1; }
+        .scene-label { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+        .label-tag { background: #2ecc71; color: white; padding: 4px 12px; border-radius: 6px; font-weight: 600; font-size: 0.95em; }
+        .conf-text { color: #95a5a6; font-size: 0.85em; }
+        .caption-text { font-style: italic; color: #555; margin-bottom: 14px; line-height: 1.5; }
+        .top-k-section { border-top: 1px solid #eee; padding-top: 10px; }
+        .top-k-title { font-size: 0.8em; color: #95a5a6; margin-bottom: 6px; }
+        .pred-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .pred-label { width: 80px; font-size: 0.8em; text-align: right; }
+        .pred-bar-bg { flex: 1; height: 8px; background: #ecf0f1; border-radius: 4px; overflow: hidden; }
+        .pred-bar { height: 100%; background: #3498db; border-radius: 4px; }
+        .pred-conf { font-size: 0.8em; color: #7f8c8d; width: 45px; }
+        .footer { text-align: center; color: #bdc3c7; font-size: 0.8em; margin-top: 32px; padding-top: 16px; border-top: 1px solid #eee; }
+        @media (max-width: 640px) {
+            .scene-body { flex-direction: column; }
+            .keyframe-img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Video Scene Analysis Report</h1>
+        <div class="subtitle">synthetic_test — 0:00:09 processing time</div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Total Shots</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">18.0s</div>
+                <div class="stat-label">Duration</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3.0s</div>
+                <div class="stat-label">Avg Shot Length</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3.0s</div>
+                <div class="stat-label">Shortest Shot</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3.0s</div>
+                <div class="stat-label">Longest Shot</div>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-title">📐 Video Timeline</div>
+            <div class="timeline">
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #3498db;"
+                 title="Shot 0: buildings">
+                <span class="segment-label">S0</span>
+            </div>
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #2ecc71;"
+                 title="Shot 1: buildings">
+                <span class="segment-label">S1</span>
+            </div>
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #e74c3c;"
+                 title="Shot 2: glacier">
+                <span class="segment-label">S2</span>
+            </div>
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #f39c12;"
+                 title="Shot 3: glacier">
+                <span class="segment-label">S3</span>
+            </div>
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #9b59b6;"
+                 title="Shot 4: glacier">
+                <span class="segment-label">S4</span>
+            </div>
+            <div class="timeline-segment" style="width: 16.666666666666664%; background: #1abc9c;"
+                 title="Shot 5: glacier">
+                <span class="segment-label">S5</span>
+            </div></div>
+        </div>
+
+        
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 0</span>
+                    <span class="time-badge">0.0s → 3.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot000.jpg" alt="Shot 0" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">buildings</span>
+                            <span class="conf-text">47.1%</span>
+                        </div>
+                        <div class="caption-text">"a green background with the words ' forest scene '"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 47.07%"></div>
+                    </div>
+                    <span class="pred-conf">47.1%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">forest</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 34.1%"></div>
+                    </div>
+                    <span class="pred-conf">34.1%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 13.420000000000002%"></div>
+                    </div>
+                    <span class="pred-conf">13.4%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 1</span>
+                    <span class="time-badge">3.0s → 6.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot001.jpg" alt="Shot 1" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">buildings</span>
+                            <span class="conf-text">50.5%</span>
+                        </div>
+                        <div class="caption-text">"a blue sky with the words sky and sea on it"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 50.5%"></div>
+                    </div>
+                    <span class="pred-conf">50.5%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 30.11%"></div>
+                    </div>
+                    <span class="pred-conf">30.1%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">sea</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 13.56%"></div>
+                    </div>
+                    <span class="pred-conf">13.6%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 2</span>
+                    <span class="time-badge">6.0s → 9.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot002.jpg" alt="Shot 2" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">glacier</span>
+                            <span class="conf-text">56.6%</span>
+                        </div>
+                        <div class="caption-text">"an image of a red background with the words urban night"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 56.620000000000005%"></div>
+                    </div>
+                    <span class="pred-conf">56.6%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 19.86%"></div>
+                    </div>
+                    <span class="pred-conf">19.9%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">sea</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 17.79%"></div>
+                    </div>
+                    <span class="pred-conf">17.8%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 3</span>
+                    <span class="time-badge">9.0s → 12.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot003.jpg" alt="Shot 3" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">glacier</span>
+                            <span class="conf-text">36.0%</span>
+                        </div>
+                        <div class="caption-text">"a yellow background with the words glei snow"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 36.05%"></div>
+                    </div>
+                    <span class="pred-conf">36.0%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 28.28%"></div>
+                    </div>
+                    <span class="pred-conf">28.3%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">forest</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 19.78%"></div>
+                    </div>
+                    <span class="pred-conf">19.8%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 4</span>
+                    <span class="time-badge">12.0s → 15.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot004.jpg" alt="Shot 4" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">glacier</span>
+                            <span class="conf-text">91.6%</span>
+                        </div>
+                        <div class="caption-text">"a yellow background with a white text that reads, ' ' ' ' ' ' ' ' ' ' ' ' ' '"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 91.59%"></div>
+                    </div>
+                    <span class="pred-conf">91.6%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 5.01%"></div>
+                    </div>
+                    <span class="pred-conf">5.0%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">sea</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 2.6%"></div>
+                    </div>
+                    <span class="pred-conf">2.6%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scene-card">
+                <div class="scene-header">
+                    <span class="shot-badge">Shot 5</span>
+                    <span class="time-badge">15.0s → 18.0s (3.0s)</span>
+                </div>
+                <div class="scene-body">
+                    <div class="keyframe-container">
+                        <img src="keyframes/synthetic_test_shot005.jpg" alt="Shot 5" class="keyframe-img">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-label">
+                            <span class="label-tag">glacier</span>
+                            <span class="conf-text">63.8%</span>
+                        </div>
+                        <div class="caption-text">"a dark blue background with a white border and a white border in the center"</div>
+                        <div class="top-k-section">
+                            <div class="top-k-title">Top Predictions</div>
+                            
+                <div class="pred-row">
+                    <span class="pred-label">glacier</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 63.75999999999999%"></div>
+                    </div>
+                    <span class="pred-conf">63.8%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">buildings</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 19.3%"></div>
+                    </div>
+                    <span class="pred-conf">19.3%</span>
+                </div>
+                <div class="pred-row">
+                    <span class="pred-label">sea</span>
+                    <div class="pred-bar-bg">
+                        <div class="pred-bar" style="width: 15.559999999999999%"></div>
+                    </div>
+                    <span class="pred-conf">15.6%</span>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="footer">
+            Generated by Video Scene Understanding Pipeline<br>
+            ViT (Scene Classification) + BLIP (Captioning) + PySceneDetect (Shot Detection)
+        </div>
+    </div>
+</body>
+</html>

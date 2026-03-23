@@ -1,0 +1,68 @@
+[
+  {
+    "shot_index": 0,
+    "start_frame": 0,
+    "end_frame": 90,
+    "start_time": 0.0,
+    "end_time": 3.0,
+    "duration": 3.0,
+    "keyframe_idx": 45,
+    "keyframe_file": "synthetic_test_shot000.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot000.jpg"
+  },
+  {
+    "shot_index": 1,
+    "start_frame": 90,
+    "end_frame": 180,
+    "start_time": 3.0,
+    "end_time": 6.0,
+    "duration": 3.0,
+    "keyframe_idx": 135,
+    "keyframe_file": "synthetic_test_shot001.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot001.jpg"
+  },
+  {
+    "shot_index": 2,
+    "start_frame": 180,
+    "end_frame": 270,
+    "start_time": 6.0,
+    "end_time": 9.0,
+    "duration": 3.0,
+    "keyframe_idx": 225,
+    "keyframe_file": "synthetic_test_shot002.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot002.jpg"
+  },
+  {
+    "shot_index": 3,
+    "start_frame": 270,
+    "end_frame": 360,
+    "start_time": 9.0,
+    "end_time": 12.0,
+    "duration": 3.0,
+    "keyframe_idx": 315,
+    "keyframe_file": "synthetic_test_shot003.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot003.jpg"
+  },
+  {
+    "shot_index": 4,
+    "start_frame": 360,
+    "end_frame": 450,
+    "start_time": 12.0,
+    "end_time": 15.0,
+    "duration": 3.0,
+    "keyframe_idx": 405,
+    "keyframe_file": "synthetic_test_shot004.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot004.jpg"
+  },
+  {
+    "shot_index": 5,
+    "start_frame": 450,
+    "end_frame": 540,
+    "start_time": 15.0,
+    "end_time": 18.0,
+    "duration": 3.0,
+    "keyframe_idx": 495,
+    "keyframe_file": "synthetic_test_shot005.jpg",
+    "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot005.jpg"
+  }
+]

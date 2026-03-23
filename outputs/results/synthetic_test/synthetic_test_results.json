@@ -1,0 +1,215 @@
+{
+  "video_name": "synthetic_test",
+  "video_path": "/content/video-scene-understanding/videos/synthetic_test.mp4",
+  "processing_time_seconds": 9.3,
+  "processing_time_human": "0:00:09",
+  "shot_statistics": {
+    "num_shots": 6,
+    "total_duration": 18.0,
+    "min_duration": 3.0,
+    "max_duration": 3.0,
+    "mean_duration": 3.0,
+    "median_duration": 3.0
+  },
+  "num_shots": 6,
+  "scenes": [
+    {
+      "shot_index": 0,
+      "start_frame": 0,
+      "end_frame": 90,
+      "start_time": 0.0,
+      "end_time": 3.0,
+      "duration": 3.0,
+      "keyframe_idx": 45,
+      "keyframe_file": "synthetic_test_shot000.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot000.jpg",
+      "scene_label": "buildings",
+      "scene_confidence": 0.4707,
+      "scene_top_k": [
+        {
+          "label": "buildings",
+          "confidence": 0.4707
+        },
+        {
+          "label": "forest",
+          "confidence": 0.341
+        },
+        {
+          "label": "glacier",
+          "confidence": 0.1342
+        }
+      ],
+      "caption": "a green background with the words ' forest scene '",
+      "captions_prompted": {
+        "unconditional": "a green background with the words ' forest scene '",
+        "a photograph of": "a photograph of a green background with the words ' forest scene '",
+        "this scene shows": "this scene shows a forest scene with a forest scene and a forest scene"
+      }
+    },
+    {
+      "shot_index": 1,
+      "start_frame": 90,
+      "end_frame": 180,
+      "start_time": 3.0,
+      "end_time": 6.0,
+      "duration": 3.0,
+      "keyframe_idx": 135,
+      "keyframe_file": "synthetic_test_shot001.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot001.jpg",
+      "scene_label": "buildings",
+      "scene_confidence": 0.505,
+      "scene_top_k": [
+        {
+          "label": "buildings",
+          "confidence": 0.505
+        },
+        {
+          "label": "glacier",
+          "confidence": 0.3011
+        },
+        {
+          "label": "sea",
+          "confidence": 0.1356
+        }
+      ],
+      "caption": "a blue sky with the words sky and sea on it",
+      "captions_prompted": {
+        "unconditional": "a blue sky with the words sky and sea on it",
+        "a photograph of": "a photograph of a blue sky with the words sky / sea",
+        "this scene shows": "this scene shows the sky, sea, and sky"
+      }
+    },
+    {
+      "shot_index": 2,
+      "start_frame": 180,
+      "end_frame": 270,
+      "start_time": 6.0,
+      "end_time": 9.0,
+      "duration": 3.0,
+      "keyframe_idx": 225,
+      "keyframe_file": "synthetic_test_shot002.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot002.jpg",
+      "scene_label": "glacier",
+      "scene_confidence": 0.5662,
+      "scene_top_k": [
+        {
+          "label": "glacier",
+          "confidence": 0.5662
+        },
+        {
+          "label": "buildings",
+          "confidence": 0.1986
+        },
+        {
+          "label": "sea",
+          "confidence": 0.1779
+        }
+      ],
+      "caption": "an image of a red background with the words urban night",
+      "captions_prompted": {
+        "unconditional": "an image of a red background with the words urban night",
+        "a photograph of": "a photograph of a red background with the words urban night",
+        "this scene shows": "this scene shows a red background with white text that reads urban urban urban urban urban urban urban"
+      }
+    },
+    {
+      "shot_index": 3,
+      "start_frame": 270,
+      "end_frame": 360,
+      "start_time": 9.0,
+      "end_time": 12.0,
+      "duration": 3.0,
+      "keyframe_idx": 315,
+      "keyframe_file": "synthetic_test_shot003.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot003.jpg",
+      "scene_label": "glacier",
+      "scene_confidence": 0.3605,
+      "scene_top_k": [
+        {
+          "label": "glacier",
+          "confidence": 0.3605
+        },
+        {
+          "label": "buildings",
+          "confidence": 0.2828
+        },
+        {
+          "label": "forest",
+          "confidence": 0.1978
+        }
+      ],
+      "caption": "a yellow background with the words glei snow",
+      "captions_prompted": {
+        "unconditional": "a yellow background with the words glei snow",
+        "a photograph of": "a photograph of a yellow background with the words glei / snow",
+        "this scene shows": "this scene shows the scene from the movie glad glad glad glad glad glad"
+      }
+    },
+    {
+      "shot_index": 4,
+      "start_frame": 360,
+      "end_frame": 450,
+      "start_time": 12.0,
+      "end_time": 15.0,
+      "duration": 3.0,
+      "keyframe_idx": 405,
+      "keyframe_file": "synthetic_test_shot004.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot004.jpg",
+      "scene_label": "glacier",
+      "scene_confidence": 0.9159,
+      "scene_top_k": [
+        {
+          "label": "glacier",
+          "confidence": 0.9159
+        },
+        {
+          "label": "buildings",
+          "confidence": 0.0501
+        },
+        {
+          "label": "sea",
+          "confidence": 0.026
+        }
+      ],
+      "caption": "a yellow background with a white text that reads, ' ' ' ' ' ' ' ' ' ' ' ' ' '",
+      "captions_prompted": {
+        "unconditional": "a yellow background with a white text that reads, ' ' ' ' ' ' ' ' ' ' ' ' ' '",
+        "a photograph of": "a photograph of a yellow background with the words, ' best ' and ' best '",
+        "this scene shows": "this scene shows a yellow background with a white text that reads, ' des / st '"
+      }
+    },
+    {
+      "shot_index": 5,
+      "start_frame": 450,
+      "end_frame": 540,
+      "start_time": 15.0,
+      "end_time": 18.0,
+      "duration": 3.0,
+      "keyframe_idx": 495,
+      "keyframe_file": "synthetic_test_shot005.jpg",
+      "keyframe_path": "/content/video-scene-understanding/outputs/results/synthetic_test/keyframes/synthetic_test_shot005.jpg",
+      "scene_label": "glacier",
+      "scene_confidence": 0.6376,
+      "scene_top_k": [
+        {
+          "label": "glacier",
+          "confidence": 0.6376
+        },
+        {
+          "label": "buildings",
+          "confidence": 0.193
+        },
+        {
+          "label": "sea",
+          "confidence": 0.1556
+        }
+      ],
+      "caption": "a dark blue background with a white border and a white border in the center",
+      "captions_prompted": {
+        "unconditional": "a dark blue background with a white border and a white border in the center",
+        "a photograph of": "a photograph of a dark blue background with a white border",
+        "this scene shows": "this scene shows a dark blue background with a white border and a white border"
+      }
+    }
+  ]
+}
