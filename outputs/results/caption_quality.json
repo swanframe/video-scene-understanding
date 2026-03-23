@@ -1,0 +1,62 @@
+{
+  "buildings": {
+    "match_rate": 65.0,
+    "total": 20,
+    "matched": 13,
+    "sample_captions": [
+      "a black and white photo of a person walking down a street",
+      "a large white building with many windows",
+      "the building is tall"
+    ]
+  },
+  "forest": {
+    "match_rate": 100.0,
+    "total": 20,
+    "matched": 20,
+    "sample_captions": [
+      "a forest filled with lots of green plants",
+      "a black and white photo of trees in the woods",
+      "the trees are tall"
+    ]
+  },
+  "glacier": {
+    "match_rate": 60.0,
+    "total": 20,
+    "matched": 12,
+    "sample_captions": [
+      "the rocks are brown",
+      "snow on the mountain",
+      "a large body of water"
+    ]
+  },
+  "mountain": {
+    "match_rate": 75.0,
+    "total": 20,
+    "matched": 15,
+    "sample_captions": [
+      "a view of the mountains in the distance",
+      "a view of the mountains from the top of a mountain",
+      "the mountains are covered in green vegetation"
+    ]
+  },
+  "sea": {
+    "match_rate": 85.0,
+    "total": 20,
+    "matched": 17,
+    "sample_captions": [
+      "a body of water",
+      "a large body of water",
+      "a body of water"
+    ]
+  },
+  "street": {
+    "match_rate": 95.0,
+    "total": 20,
+    "matched": 19,
+    "sample_captions": [
+      "tall buildings in the background",
+      "a narrow street in a small town",
+      "an empty street in a small town"
+    ]
+  }
+}
