@@ -1,0 +1,147 @@
+{
+  "classification": {
+    "accuracy": 0.95,
+    "macro_f1": 0.9507462676097157,
+    "weighted_f1": 0.9498587204991132,
+    "macro_precision": 0.9506000127075759,
+    "macro_recall": 0.9510385742614779,
+    "per_class": {
+      "buildings": {
+        "precision": 0.9468822170900693,
+        "recall": 0.9382151029748284,
+        "f1": 0.9425287356321839,
+        "support": 437.0
+      },
+      "forest": {
+        "precision": 0.9874476987447699,
+        "recall": 0.9957805907172996,
+        "f1": 0.9915966386554622,
+        "support": 474.0
+      },
+      "glacier": {
+        "precision": 0.9363295880149812,
+        "recall": 0.9041591320072333,
+        "f1": 0.9199632014719411,
+        "support": 553.0
+      },
+      "mountain": {
+        "precision": 0.9152542372881356,
+        "recall": 0.9257142857142857,
+        "f1": 0.9204545454545454,
+        "support": 525.0
+      },
+      "sea": {
+        "precision": 0.9691714836223507,
+        "recall": 0.9862745098039216,
+        "f1": 0.9776482021379981,
+        "support": 510.0
+      },
+      "street": {
+        "precision": 0.9485148514851485,
+        "recall": 0.9560878243512974,
+        "f1": 0.952286282306163,
+        "support": 501.0
+      }
+    }
+  },
+  "error_analysis": {
+    "total_errors": 150,
+    "total_samples": 3000,
+    "error_rate": 5.0,
+    "top_error_pairs": [
+      [
+        "glacier\u2192mountain",
+        41
+      ],
+      [
+        "mountain\u2192glacier",
+        31
+      ],
+      [
+        "buildings\u2192street",
+        24
+      ],
+      [
+        "street\u2192buildings",
+        22
+      ],
+      [
+        "glacier\u2192sea",
+        8
+      ],
+      [
+        "mountain\u2192sea",
+        5
+      ],
+      [
+        "buildings\u2192sea",
+        3
+      ],
+      [
+        "glacier\u2192forest",
+        3
+      ],
+      [
+        "sea\u2192glacier",
+        3
+      ],
+      [
+        "sea\u2192mountain",
+        3
+      ]
+    ]
+  },
+  "speed_benchmark": {
+    "shot_detection": {
+      "mean": 0.936,
+      "std": 0.2
+    },
+    "keyframe_extraction": {
+      "mean": 0.103,
+      "std": 0.022
+    },
+    "classification": {
+      "mean": 0.143,
+      "std": 0.032
+    },
+    "captioning": {
+      "mean": 2.219,
+      "std": 0.151
+    },
+    "total": {
+      "mean": 3.401,
+      "std": 0.36
+    },
+    "video_info": {
+      "frames": 540,
+      "duration": 18.0,
+      "fps": 30.0,
+      "num_shots": 6
+    },
+    "sbd_fps": 576.8
+  },
+  "model_info": {
+    "model": "google/vit-base-patch16-224",
+    "num_classes": 6,
+    "classes": [
+      "buildings",
+      "forest",
+      "glacier",
+      "mountain",
+      "sea",
+      "street"
+    ],
+    "training": "Two-phase (frozen encoder + full fine-tuning)",
+    "dataset": "Intel Image Classification",
+    "test_samples": 3000
+  },
+  "captioning_info": {
+    "model": "Salesforce/blip-image-captioning-base",
+    "method": "Beam search (num_beams=4)"
+  },
+  "shot_detection_info": {
+    "library": "PySceneDetect 0.6.x",
+    "detector": "ContentDetector",
+    "threshold": 27.0
+  }
+}
